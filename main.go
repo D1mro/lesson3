@@ -3,8 +3,8 @@ package main
 import (
 	"context"
 	"fmt"
-	"lesson3/feature_postres/simple_connection"
-	"lesson3/feature_postres/simple_sql"
+	"lesson3/feature_postgres/simple_connection"
+	"lesson3/feature_postgres/simple_sql"
 )
 
 func main() {
@@ -34,7 +34,7 @@ func main() {
 	// 	panic(err)
 	// }
 
-	tasks,_:=simple_sql.SelectRows(ctx,conn)
+	tasks, _ := simple_sql.SelectRows(ctx, conn)
 	fmt.Println(tasks)
 
 	fmt.Println("Succeed!")
