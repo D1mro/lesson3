@@ -2,41 +2,15 @@ package main
 
 import (
 	"fmt"
-	"os"
+	"lesson3/http_server"
 )
 
 func main() {
-
-	fmt.Println(os.Getenv("phone_number"))
-	// ctx := context.Background()
-	// conn, _ := simple_connection.CreateConnection(ctx)
-
-	// if err := simple_sql.CreateTable(ctx, conn); err != nil {
-	// 	panic(err)
-	// }
-	// fmt.Println("Таблица создана успешно!")
-
-	// if err := simple_sql.InsertRow(ctx,
-	// 	conn,
-	// 	"Обед",
-	// 	"soup",
-	// 	false,
-	// 	time.Now(),
-	// 	); err != nil {
-	// 	panic(err)
-	// }
-
-	// if err := simple_sql.UpdateRow(ctx, conn); err != nil {
-	// 	panic(err)
-	// }
-
-	// if err := simple_sql.DeleteRow(ctx, conn); err != nil {
-	// 	panic(err)
-	// }
-
-	// tasks, _ := simple_sql.SelectRows(ctx, conn)
-	// fmt.Println(tasks)
-
-	fmt.Println("Succeed!")
-
+	fmt.Println("Запуска сервера")
+	
+	if err := http_server.StartHTTPServer(); err != nil {
+		fmt.Println("сервер выдал ошибку")
+	} else {
+		fmt.Println("Success")
+	}
 }
